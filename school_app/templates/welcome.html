@@ -23,8 +23,13 @@
 
                 <li><a href="/school/table">See Students</a></li>
                 
+                
+                {%if request.user.is_authenticated%}
+                <li><a href="/school/logout">Logout</a></li>
+                {%else%}
                 <li><a href="/school/signup">Sign Up</a></li>
                 <li><a href="/school/login">Login</a></li>
+                {%endif%}
             </ul>
         </nav>
     </header>
@@ -32,6 +37,8 @@
     <section class="hero">
         <div class="overlay"></div>
         <p>Welcome on SFST SCHOOL SYSTEM</p>
+
+     
 
     </section>
 
