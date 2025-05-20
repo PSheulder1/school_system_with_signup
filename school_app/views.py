@@ -32,8 +32,23 @@ def add(request):
     return render(request, "add.html")
 
 
+
 def login(request):
+    if request.method=="POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+       
+
+        if user :
+            auth_login(request, user)
+            return redirect('welcome')
+        else:
+            return render(request, "login.html", {"error":"Invalid credentials. Please try again..."})
+        
     return render(request, "login.html")
+
 
 
 def signup(request):
