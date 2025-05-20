@@ -1,0 +1,74 @@
+body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.navbar {
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+
+.navbar ul li a {
+    color:white;
+    text-decoration: none;
+}
+
+.hero {
+    position: relative;
+    background: url('img1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    color:white;
+    font-size: 45px;
+    align-items: center;
+    font-weight: bold;
+    
+}
+
+/* Overlay noir avec opacité */
+.overlay {
+    position: absolute; /* Permet de recouvrir toute la section */
+    top: 0;
+    left: 0;
+    width: 100%; /* Occupe toute la largeur */
+    height: 100%; /* Occupe toute la hauteur */
+    background-color: rgba(0, 0, 0, 0.5); /* Noir avec 50% d'opacité */
+   }
+
+/* Style du Footer */
+footer {
+    background-color: #222; /* Couleur de fond sombre */
+    color: white; /* Texte en blanc */
+    text-align: center; /* Centre le texte */
+    padding: 15px; /* Ajoute de l'espace autour du texte */
+    position: relative; /* Garde le footer en bas sans le fixer */
+    bottom: 0;
+    width: 100%; /* Occupe toute la largeur */
+   }
+
+
+
+
+
+   /* FORMULAIRE ADD STUDENTS */
+
+
+   

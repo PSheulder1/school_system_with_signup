@@ -1,0 +1,57 @@
+{%load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Students</title>
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+
+<body>
+  
+    <div class="form-container">
+        <h2>Inscription Étudiant</h2>
+        <form action="#" method="POST" enctype="multipart/form-data">
+
+          {% csrf_token %} 
+          
+          <div class="form-group">
+            <label for="nom">Nom complet</label>
+            <input type="text" id="nom" name="nom" required />
+          </div>
+
+          <div class="form-group">
+            <label for="addresse">Adresse</label>
+            <input type="text" id="addresse" name="addresse" required />
+          </div>
+
+          <div class="form-group">
+            <label for="telephone">Téléphone</label>
+            <input type="number" id="telephone" name="telephone" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Adresse Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="classe">Classe</label>
+            <select id="classe" name="classe" required>
+              <option value="">-- Sélectionner la classe --</option>
+              <option value="L1">L1</option>
+              <option value="L2">L2</option>
+              <option value="L3">L3</option>
+              <option value="M1">M1</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="image">Photo de profil</label>
+            <input type="file" id="image" name="image" accept="image/*" />
+          </div>
+          <button type="submit">S'inscrire</button>
+        </form>
+      </div>
+</body>
+</html>

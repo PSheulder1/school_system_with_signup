@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des Étudiants</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #f2f4f8;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .table-container {
+      max-width: 1000px;
+      margin: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead {
+      background: #4facfe;
+      color: white;
+    }
+
+    th, td {
+      padding: 15px 20px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:hover {
+      background-color: #f1f9ff;
+    }
+
+    img.profile-pic {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      td {
+        padding: 10px;
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 20px;
+        top: 10px;
+        font-weight: bold;
+        color: #4facfe;
+      }
+
+      img.profile-pic {
+        width: 50px;
+        height: 50px;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Liste des Étudiants</h2>
+
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Email</th>
+          <th>Téléphone</th>
+          <th>Classe</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        {%for info in data%}
+        <tr>
+          <td data-label="Photo">
+            <img class="profile-pic" src="{{info.image.url}}" alt="Photo étudiant">
+          </td>
+          <td data-label="Nom"> {{info.nom}}</td>
+          <td data-label="Adresse">{{info.addresse}}</td>
+          <td data-label="Email">{{info.email}}</td>
+          <td data-label="Téléphone">{{info.telephone}}</td>
+          <td data-label="Classe">{{info.classe}}</td>
+        </tr>
+        {%endfor%}
+        
+      
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>
