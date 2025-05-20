@@ -4,7 +4,7 @@ from .models import Student
 
 
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib.auth.models import User
 
 # Create your views here.
